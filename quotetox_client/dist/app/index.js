@@ -4,4 +4,3 @@ function __export(m) {
 }
 __export(require('./environment'));
 __export(require('./quotetox-client.component'));
-//# sourceMappingURL=../index.js.map

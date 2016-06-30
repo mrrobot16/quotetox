@@ -11,20 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // Angular 2 objects
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+var quotes_dict_service_1 = require('./quotes-dict.service');
 var QuoteService = (function () {
-    function QuoteService(http) {
+    function QuoteService(http, quote_dict) {
         this.http = http;
+        this.quote_dict = quote_dict;
     }
-    // get quote
-    QuoteService.prototype.getQuotes = function () {
+    QuoteService.prototype.get_quotes_dict = function () {
+        this.quotes = this.quote_dict.get_quotes();
+        this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)].quote;
+        return this.quote;
     };
-    // post quote
+    QuoteService.prototype.get_quote = function () {
+    };
     QuoteService.prototype.postQuote = function () {
     };
-    // update quote
     QuoteService.prototype.updateQuote = function () {
     };
-    // delete quote
     QuoteService.prototype.deleteQuote = function () {
     };
     QuoteService.prototype.get = function () {
@@ -37,9 +40,8 @@ var QuoteService = (function () {
     };
     QuoteService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, quotes_dict_service_1.QuoteDictService])
     ], QuoteService);
     return QuoteService;
 }());
 exports.QuoteService = QuoteService;
-//# sourceMappingURL=../../quote.service.js.map

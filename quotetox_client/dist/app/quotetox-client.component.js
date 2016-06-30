@@ -15,6 +15,7 @@ var http_1 = require('@angular/http');
 var quote_component_1 = require('./components/quote.component');
 // Services
 var quote_service_1 = require('./services/quote.service');
+var quotes_dict_service_1 = require('./services/quotes-dict.service');
 var QuotetoxClientAppComponent = (function () {
     function QuotetoxClientAppComponent() {
     }
@@ -24,11 +25,10 @@ var QuotetoxClientAppComponent = (function () {
             selector: 'quotetox-client',
             template: '<quote-component></quote-component>',
             directives: [quote_component_1.QuoteComponent],
-            providers: [http_1.HTTP_PROVIDERS, quote_service_1.QuoteService]
+            providers: [http_1.HTTP_PROVIDERS, quote_service_1.QuoteService, quotes_dict_service_1.QuoteDictService]
         }), 
         __metadata('design:paramtypes', [])
     ], QuotetoxClientAppComponent);
     return QuotetoxClientAppComponent;
 }());
 exports.QuotetoxClientAppComponent = QuotetoxClientAppComponent;
-//# sourceMappingURL=../quotetox-client.component.js.map

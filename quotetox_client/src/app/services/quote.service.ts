@@ -1,44 +1,54 @@
 // Angular 2 objects
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
+import {QuoteDictService} from './quotes-dict.service';
 @Injectable()
 
 export class QuoteService {
-  constructor(private http: Http) {
+  public quotes: Array<any>;
+  public quote: string;
 
-  }
+    constructor(private http: Http, private quote_dict:QuoteDictService) {
 
-  // get quote
-  getQuotes(){
+    }
 
-  }
 
-  // post quote
-  postQuote(){
+    get_quotes_dict(){
+      this.quotes = this.quote_dict.get_quotes();
+      this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)].quote
+      return this.quote
+    }
 
-  }
+    get_quote(){
 
-  // update quote
-  updateQuote(){
+    }
 
-  }
+    postQuote(){
 
-  // delete quote
-  deleteQuote(){
+    }
 
-  }
+    updateQuote(){
 
-  private get(){
+    }
 
-  }
-  private post(){
+    deleteQuote(){
 
-  }
-  private put(){
+    }
 
-  }
-  private delete(){
+    private get(){
 
-  }
+    }
+
+    private post(){
+
+    }
+
+    private put(){
+
+    }
+
+    private delete(){
+
+    }
 
 }

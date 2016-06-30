@@ -13,4 +13,3 @@ testing_1.describe('App: QuotetoxClient', function () {
     //   expect(app.title).toEqual('quotetox-client works!');
     // }));
 });
-//# sourceMappingURL=../quotetox-client.component.spec.js.map

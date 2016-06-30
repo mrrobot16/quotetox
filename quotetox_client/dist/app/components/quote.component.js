@@ -23,9 +23,10 @@ var QuoteComponent = (function () {
         this.today = new Date();
         this.last_drink = new Date(2016, 0, 17);
         this.alcohol_free_days = Math.floor(((this.today - this.last_drink) / (864 * Math.pow(10, 5))));
-        this.quotes = [];
+        this.quote = this.quote_service.get_quotes_dict();
     };
-    QuoteComponent.prototype.getQuotes = function () {
+    QuoteComponent.prototype.get_quotes = function () {
+        this.quote = this.quote_service.get_quotes_dict();
     };
     QuoteComponent = __decorate([
         core_1.Component({
@@ -40,4 +41,3 @@ var QuoteComponent = (function () {
     return QuoteComponent;
 }());
 exports.QuoteComponent = QuoteComponent;
-//# sourceMappingURL=../../quote.component.js.map
