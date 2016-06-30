@@ -1,5 +1,5 @@
 // Angular 2 objects
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 // Components
 import {QuoteComponent} from './components/quote.component';
@@ -16,6 +16,6 @@ import {QuoteService} from './services/quote.service'
 })
 export class QuotetoxClientAppComponent {
   constructor(){
-    
+
   }
 }
