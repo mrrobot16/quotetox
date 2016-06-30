@@ -1,7 +1,6 @@
-  <div class="container" (keyup.enter)="get_quotes()">
-    <p>Days Alcohol Free:</p>
-    <p>{{alcohol_free_days}}</p>
+  <div class="container">
+    <p>Days Alcohol Free: {{alcohol_free_days}}</p>
     <p>Quote:</p>
     <p>{{quote}}</p>
-    <button (click)="get_quotes()">Get Quote</button>
+    <button class="quote-btn" (click)="get_quotes()">Get Quote</button>
   </div>

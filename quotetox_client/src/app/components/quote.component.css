@@ -1,4 +1,10 @@
-.container, button {
+.container {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.quote-btn {
   margin-top: 30px;
   position: absolute;
+  background-color: #0e2dff;
 }
