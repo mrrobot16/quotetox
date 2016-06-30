@@ -4,24 +4,21 @@
   <meta charset="utf-8">
   <title>QuotetoxClient</title>
   <base href="/">
-
-  <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <quotetox-client-app>Loading...</quotetox-client-app>
-
-  
-
+  <quotetox-client>Loading...</quotetox-client>
     <script src="vendor/es6-shim/es6-shim.js"></script><script src="vendor/reflect-metadata/Reflect.js"></script><script src="vendor/systemjs/dist/system.src.js"></script><script src="vendor/zone.js/dist/zone.js"></script>
+    <!-- NOTE Polyfill is so other browsers can run angular2  -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script>
     <script>
       System.import('system-config.js').then(function () {
         System.import('main');
-      }).catch(console.error.bind(console));
+      });
     </script>
 
-  
+
 
 
 
