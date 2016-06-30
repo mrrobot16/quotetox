@@ -17,8 +17,7 @@ var QuotetoxClientAppComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'quotetox-client',
-            template: '<h1>Hello QuoteTox your detox and quote tool</h1> ',
-            styleUrls: ['quotetox-client.component.css']
+            template: '<quote-component></quote-component>'
         }), 
         __metadata('design:paramtypes', [])
     ], QuotetoxClientAppComponent);
