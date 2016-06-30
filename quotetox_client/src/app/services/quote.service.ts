@@ -5,5 +5,40 @@ import {Http} from '@angular/http';
 
 export class QuoteService {
   constructor(private http: Http) {
+
   }
+
+  // get quote
+  getQuotes(){
+
+  }
+
+  // post quote
+  postQuote(){
+
+  }
+
+  // update quote
+  updateQuote(){
+
+  }
+
+  // delete quote
+  deleteQuote(){
+
+  }
+
+  private get(){
+
+  }
+  private post(){
+
+  }
+  private put(){
+
+  }
+  private delete(){
+
+  }
+
 }

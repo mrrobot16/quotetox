@@ -15,6 +15,26 @@ var QuoteService = (function () {
     function QuoteService(http) {
         this.http = http;
     }
+    // get quote
+    QuoteService.prototype.getQuotes = function () {
+    };
+    // post quote
+    QuoteService.prototype.postQuote = function () {
+    };
+    // update quote
+    QuoteService.prototype.updateQuote = function () {
+    };
+    // delete quote
+    QuoteService.prototype.deleteQuote = function () {
+    };
+    QuoteService.prototype.get = function () {
+    };
+    QuoteService.prototype.post = function () {
+    };
+    QuoteService.prototype.put = function () {
+    };
+    QuoteService.prototype.delete = function () {
+    };
     QuoteService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

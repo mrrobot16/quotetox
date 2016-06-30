@@ -15,4 +15,7 @@ import {QuoteService} from './services/quote.service'
 
 })
 export class QuotetoxClientAppComponent {
+  constructor(){
+    
+  }
 }
