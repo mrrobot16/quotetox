@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'quotetox-client-app',
-  templateUrl: 'quotetox-client.component.html',
+  template: '<h1>Hello QuoteTox your detox and quote tool</h1> ',
   styleUrls: ['quotetox-client.component.css']
 })
 export class QuotetoxClientAppComponent {
