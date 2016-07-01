@@ -1,4 +1,5 @@
 // Angular 2 objects
+
 import {Injectable} from '@angular/core';
 
 @Injectable()

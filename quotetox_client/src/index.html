@@ -9,6 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 </head>
 <body>
+  <style>
+    html {
+      background-color:#0400ff;
+    }
+    quotetox-client {
+      color:#fff;
+    }
+  </style>
   <quotetox-client>Counting Alcohol Free Days....</quotetox-client>
     {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
     <!-- NOTE Polyfill is so other browsers can run angular2  -->
