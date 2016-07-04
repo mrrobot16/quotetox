@@ -1,26 +1,21 @@
 // Angular 2 objects
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {QuoteDictService} from './quotes-dict.service';
+import {Http, Headers} from '@angular/http';
+// Models
+import {Quote} from '../models/quote.model'
+
 @Injectable()
 
 export class QuoteService {
-  public quotes: Array<any>;
-  public quote: string;
-
-    constructor(private http: Http, private quote_dict:QuoteDictService) {
+  public quote_end: string;
+  public quotes: any;
+    constructor(private http: Http) {
+      this.quote_end = "quotes";
 
     }
 
-
-    get_quotes_dict(){
-      this.quotes = this.quote_dict.get_quotes();
-      this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)].quote
-      return this.quote
-    }
-
-    get_quote(){
-
+    get_quote():Promise<any>{
+      return this.get();
     }
 
     postQuote(){
@@ -35,8 +30,13 @@ export class QuoteService {
 
     }
 
-    private get(){
-
+    private get():Promise<any>{
+      this.quotes = this.http.get(this.quote_end)
+          .toPromise()
+          .then((res) => {
+            return res.json();
+          });
+          return this.quotes;
     }
 
     private post(){

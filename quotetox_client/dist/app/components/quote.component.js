@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Angular 2 objects
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 // Models
 // import {Quote} from '../models/quote.model';
 // Services
@@ -23,10 +24,14 @@ var QuoteComponent = (function () {
         this.today = new Date();
         this.last_drink = new Date(2016, 0, 17);
         this.alcohol_free_days = Math.floor(((this.today - this.last_drink) / (864 * Math.pow(10, 5))));
-        this.quote = this.quote_service.get_quotes_dict();
+        this.get_quotes();
     };
     QuoteComponent.prototype.get_quotes = function () {
-        this.quote = this.quote_service.get_quotes_dict();
+        var _this = this;
+        var quote = this.quote_service.get_quote();
+        return quote.then(function (quotes) {
+            _this.quote = quotes[Math.floor(Math.random() * quotes.length)].quote;
+        });
     };
     QuoteComponent = __decorate([
         core_1.Component({
@@ -34,7 +39,7 @@ var QuoteComponent = (function () {
             selector: 'quote-component',
             templateUrl: 'quote.component.html',
             styleUrls: ['quote.component.css'],
-            providers: [quote_service_1.QuoteService]
+            providers: [http_1.HTTP_PROVIDERS, quote_service_1.QuoteService]
         }), 
         __metadata('design:paramtypes', [quote_service_1.QuoteService])
     ], QuoteComponent);
