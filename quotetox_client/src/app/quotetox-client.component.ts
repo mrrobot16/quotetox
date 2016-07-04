@@ -1,5 +1,7 @@
 // Angular 2 objects
 import {Component} from '@angular/core';
+import {HTTP_PROVIDERS} from '@angular/http';
+
 // Components
 import {QuoteComponent} from './components/quote.component';
 // Services
@@ -10,7 +12,7 @@ import {QuoteService} from './services/quote.service'
   selector: 'quotetox-client',
   template: '<quote-component></quote-component>',
   directives:[QuoteComponent],
-  providers:[QuoteService]
+  providers:[QuoteService, HTTP_PROVIDERS]
 
 })
 export class QuotetoxClientAppComponent {

@@ -14,19 +14,19 @@ export class QuoteService {
 
     }
 
-    get_quote():Promise<any>{
+    get_quotes():Promise<any>{
       return this.get();
     }
 
-    postQuote(){
+    post_quote(){
 
     }
 
-    updateQuote(){
+    update_quote(){
 
     }
 
-    deleteQuote(){
+    delete_quote(){
 
     }
 

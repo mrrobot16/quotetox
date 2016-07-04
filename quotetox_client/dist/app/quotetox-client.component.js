@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Angular 2 objects
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 // Components
 var quote_component_1 = require('./components/quote.component');
 // Services
@@ -23,7 +24,7 @@ var QuotetoxClientAppComponent = (function () {
             selector: 'quotetox-client',
             template: '<quote-component></quote-component>',
             directives: [quote_component_1.QuoteComponent],
-            providers: [quote_service_1.QuoteService]
+            providers: [quote_service_1.QuoteService, http_1.HTTP_PROVIDERS]
         }), 
         __metadata('design:paramtypes', [])
     ], QuotetoxClientAppComponent);

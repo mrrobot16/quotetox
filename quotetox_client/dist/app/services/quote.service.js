@@ -16,14 +16,14 @@ var QuoteService = (function () {
         this.http = http;
         this.quote_end = "quotes";
     }
-    QuoteService.prototype.get_quote = function () {
+    QuoteService.prototype.get_quotes = function () {
         return this.get();
     };
-    QuoteService.prototype.postQuote = function () {
+    QuoteService.prototype.post_quote = function () {
     };
-    QuoteService.prototype.updateQuote = function () {
+    QuoteService.prototype.update_quote = function () {
     };
-    QuoteService.prototype.deleteQuote = function () {
+    QuoteService.prototype.delete_quote = function () {
     };
     QuoteService.prototype.get = function () {
         this.quotes = this.http.get(this.quote_end)

@@ -10,9 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Angular 2 objects
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-// Models
-// import {Quote} from '../models/quote.model';
+var detox_model_1 = require('../models/detox.model');
 // Services
 // This Service handles all Quote HTTP calls to our server
 var quote_service_1 = require('../services/quote.service');
@@ -21,14 +19,16 @@ var QuoteComponent = (function () {
         this.quote_service = quote_service;
     }
     QuoteComponent.prototype.ngOnInit = function () {
-        this.today = new Date();
-        this.last_drink = new Date(2016, 0, 17);
-        this.alcohol_free_days = Math.floor(((this.today - this.last_drink) / (864 * Math.pow(10, 5))));
+        this.detox = new detox_model_1.Detox();
+        this.detox.today = new Date();
+        this.detox.drug_name = "Alcohol";
+        this.detox.last_time = new Date(2016, 0, 17);
+        this.detox.tox_free_days = Math.floor(((this.detox.today - this.detox.last_time) / (864 * Math.pow(10, 5))));
         this.get_quotes();
     };
     QuoteComponent.prototype.get_quotes = function () {
         var _this = this;
-        var quote = this.quote_service.get_quote();
+        var quote = this.quote_service.get_quotes();
         return quote.then(function (quotes) {
             _this.quote = quotes[Math.floor(Math.random() * quotes.length)].quote;
         });
@@ -39,7 +39,7 @@ var QuoteComponent = (function () {
             selector: 'quote-component',
             templateUrl: 'quote.component.html',
             styleUrls: ['quote.component.css'],
-            providers: [http_1.HTTP_PROVIDERS, quote_service_1.QuoteService]
+            providers: [quote_service_1.QuoteService]
         }), 
         __metadata('design:paramtypes', [quote_service_1.QuoteService])
     ], QuoteComponent);
