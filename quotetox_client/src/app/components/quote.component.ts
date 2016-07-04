@@ -2,8 +2,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 // Models
-// import {Quote} from '../models/quote.model';
-
+import {Quote} from '../models/quote.model';
+import {Detox} from '../models/detox.model';
 // Services
 // This Service handles all Quote HTTP calls to our server
 import {QuoteService} from '../services/quote.service';
