@@ -19,17 +19,17 @@ export class QuoteComponent implements OnInit {
   public quotes: Quote[];
   public quote: Quote;
   public detox: Detox;
-
+  public today:any;
   constructor(private quote_service: QuoteService){
 
   }
 
   ngOnInit(){
     this.detox = new Detox();
-    this.detox.today = new Date();
+    this.today = new Date();
     this.detox.drug_name = "Alcohol"
     this.detox.last_time = new Date(2016,0,17)
-    this.detox.tox_free_days = Math.floor(((this.detox.today - this.detox.last_time)/(864*Math.pow(10,5))))
+    this.detox.tox_free_days = Math.floor(((this.today - this.detox.last_time)/(864*Math.pow(10,5))))
     this.get_quotes();
   }
 

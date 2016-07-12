@@ -1,5 +1,5 @@
 class DetoxesController < ApplicationController
-  before_action :set_detox, only: [:show, :update, :destroy]
+  before_action :set_detox, only: [:days_free, :show, :update, :destroy]
 
   # GET /detoxes
   def index
@@ -11,6 +11,10 @@ class DetoxesController < ApplicationController
   # GET /detoxes/1
   def show
     render json: @detox
+  end
+
+  def days_free
+    render json: {days_free: @detox.days_free}
   end
 
   # POST /detoxes
