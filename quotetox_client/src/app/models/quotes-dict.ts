@@ -1,6 +1,6 @@
 // Quotes of JUNE
 
-var quotes = [
+export var quotes = [
         {
           quote: "Discipline will drive your success in the most difficult circumstances.",
           author: ''

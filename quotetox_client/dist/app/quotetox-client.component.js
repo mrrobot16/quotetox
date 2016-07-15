@@ -17,6 +17,7 @@ var quote_component_1 = require('./components/quote.component');
 var quote_service_1 = require('./services/quote.service');
 var QuotetoxClientAppComponent = (function () {
     function QuotetoxClientAppComponent() {
+        console.log("I work");
     }
     QuotetoxClientAppComponent = __decorate([
         core_1.Component({
