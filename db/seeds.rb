@@ -592,6 +592,10 @@ quotes = [
   {
   quote: "75% of today was problem solving. Understand the barrier, ask the right questions, recognize the opportunity and empower people to execute.",
   author: ''
+  },
+  {
+  quote:"The most important decision we make is whether we believe we live in a friendly or a hostile universe.",
+  author:"Albert Einstein"
   }
 ]
 
