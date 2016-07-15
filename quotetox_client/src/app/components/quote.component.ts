@@ -26,10 +26,10 @@ export class QuoteComponent implements OnInit {
 
   ngOnInit(){
     this.detox = new Detox();
-    var today:any = new Date();
+    this.today = new Date();
     this.detox.drug_name = "Alcohol"
     this.detox.last_time = new Date(2016,0,17)
-    this.detox.tox_free = Math.floor(((today - this.detox.last_time)/(864*Math.pow(10,5))))
+    this.detox.tox_free = Math.floor(((this.today - this.detox.last_time)/(864*Math.pow(10,5))))
     this.get_quotes();
   }
 
