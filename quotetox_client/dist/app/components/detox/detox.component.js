@@ -12,7 +12,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 // Models
 var detox_model_1 = require('../../models/detox.model');
-// Services
 var DetoxComponent = (function () {
     function DetoxComponent() {
     }
@@ -22,6 +21,8 @@ var DetoxComponent = (function () {
         this.detox.drug_name = "Alcohol";
         this.detox.last_time = new Date(2016, 0, 17);
         this.detox.tox_free = Math.floor(((this.today - this.detox.last_time) / (864 * Math.pow(10, 5))));
+    };
+    DetoxComponent.prototype.getDetox = function () {
     };
     DetoxComponent = __decorate([
         core_1.Component({
