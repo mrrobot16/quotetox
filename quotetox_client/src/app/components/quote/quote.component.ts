@@ -1,12 +1,12 @@
 // Angular 2 objects
 import {Component, OnInit} from '@angular/core';
 // Models
-import {Quote} from '../models/quote.model';
-import {Detox} from '../models/detox.model';
+import {Quote} from '../../models/quote.model';
+import {Detox} from '../../models/detox.model';
 
 // Services
-// This Service handles all Quote HTTP calls to our server
-import {QuoteService} from '../services/quote.service';
+// This Service handles all Quote HTTP calls to our rails server
+import {QuoteService} from '../../services/quote.service';
 
 @Component({
   moduleId: module.id,
@@ -34,7 +34,7 @@ export class QuoteComponent implements OnInit {
   }
 
   get_quotes():Promise<any>{
-    var quote = this.quote_service.get_quotes();
+    var quote:any = this.quote_service.get_quotes();
     return quote.then(
       (quotes) => {
         this.quote = quotes[Math.floor(Math.random() * quotes.length)].quote

@@ -10,10 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Angular 2 objects
 var core_1 = require('@angular/core');
-var detox_model_1 = require('../models/detox.model');
+var detox_model_1 = require('../../models/detox.model');
 // Services
-// This Service handles all Quote HTTP calls to our server
-var quote_service_1 = require('../services/quote.service');
+// This Service handles all Quote HTTP calls to our rails server
+var quote_service_1 = require('../../services/quote.service');
 var QuoteComponent = (function () {
     function QuoteComponent(quote_service) {
         this.quote_service = quote_service;

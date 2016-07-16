@@ -10,24 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Angular 2 objects
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-// Components
-var home_screen_component_1 = require('./components/home-screen/home-screen.component');
+var quote_component_1 = require('../quote/quote.component');
 // Services
-var quote_service_1 = require('./services/quote.service');
-var QuotetoxClientAppComponent = (function () {
-    function QuotetoxClientAppComponent() {
+// This Service handles all Quote HTTP calls to our server
+var HomeScreenComponent = (function () {
+    function HomeScreenComponent() {
     }
-    QuotetoxClientAppComponent = __decorate([
+    HomeScreenComponent.prototype.ngOnInit = function () {
+    };
+    HomeScreenComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'quotetox-client',
-            template: '<home-screen-component></home-screen-component>',
-            directives: [home_screen_component_1.HomeScreenComponent],
-            providers: [quote_service_1.QuoteService, http_1.HTTP_PROVIDERS]
+            selector: 'home-screen-component',
+            template: "\n  <div class=\"container\">\n    <detox-component></detox-component>\n    <quote-component></quote-component>\n  </div>\n  ",
+            styleUrls: ['home-screen.css'],
+            providers: [],
+            directives: [quote_component_1.QuoteComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], QuotetoxClientAppComponent);
-    return QuotetoxClientAppComponent;
+    ], HomeScreenComponent);
+    return HomeScreenComponent;
 }());
-exports.QuotetoxClientAppComponent = QuotetoxClientAppComponent;
+exports.HomeScreenComponent = HomeScreenComponent;

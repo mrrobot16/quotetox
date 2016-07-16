@@ -596,6 +596,10 @@ quotes = [
   {
   quote:"The most important decision we make is whether we believe we live in a friendly or a hostile universe.",
   author:"Albert Einstein"
+  },
+  {
+  quote:"A lion doesn't concern himself with the opinion of a sheep",
+  author:""
   }
 ]
 
