@@ -23,7 +23,7 @@ var HomeScreenComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'home-screen-component',
-            template: "\n  <div class=\"container\">\n    <detox-component></detox-component>\n    <quote-component></quote-component>\n  </div>\n  ",
+            template: "\n  <div class=\"container\">\n    <div class=\"home-screen\">\n    <detox-component></detox-component>\n    <quote-component></quote-component>\n    </div>\n  </div>\n  ",
             styleUrls: ['home-screen.css'],
             providers: [],
             directives: [quote_component_1.QuoteComponent, detox_component_1.DetoxComponent]

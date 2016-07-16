@@ -11,8 +11,10 @@ import {QuoteComponent} from '../quote/quote.component';
   selector: 'home-screen-component',
   template: `
   <div class="container">
+    <div class="home-screen">
     <detox-component></detox-component>
     <quote-component></quote-component>
+    </div>
   </div>
   `,
   styleUrls: ['home-screen.css'],
