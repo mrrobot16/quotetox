@@ -11,7 +11,11 @@ import {QuoteService} from '../../services/quote.service';
 @Component({
   moduleId: module.id,
   selector: 'quote-component',
-  templateUrl: 'quote.component.html',
+  template: `
+      <p>Quote of the day:</p>
+      <p>{{quote}}</p>
+      <button class="quote-btn" (click)="get_quotes()">Get Quote</button>
+  `,
   styleUrls: ['quote.component.css'],
   providers:[QuoteService]
 })
@@ -25,21 +29,12 @@ export class QuoteComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.detox = new Detox();
-    this.today = new Date();
-    this.detox.drug_name = "Alcohol"
-    this.detox.last_time = new Date(2016,0,17)
-    this.detox.tox_free = Math.floor(((this.today - this.detox.last_time)/(864*Math.pow(10,5))))
     this.get_quotes();
   }
 
   get_quotes():Promise<any>{
     var quote:any = this.quote_service.get_quotes();
-    return quote.then(
-      (quotes) => {
-        this.quote = quotes[Math.floor(Math.random() * quotes.length)].quote
-      }
-    )
+    return quote.then(quotes => this.quote = quotes[Math.floor(Math.random() * quotes.length)].quote);
   }
 
 

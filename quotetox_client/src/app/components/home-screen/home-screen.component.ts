@@ -1,5 +1,6 @@
 // Angular 2 objects
 import {Component, OnInit} from '@angular/core';
+import {DetoxComponent} from '../detox/detox.component';
 import {QuoteComponent} from '../quote/quote.component';
 // Services
 // This Service handles all Quote HTTP calls to our server
@@ -16,7 +17,7 @@ import {QuoteComponent} from '../quote/quote.component';
   `,
   styleUrls: ['home-screen.css'],
   providers:[],
-  directives:[QuoteComponent]
+  directives:[QuoteComponent, DetoxComponent]
 })
 export class HomeScreenComponent implements OnInit {
 

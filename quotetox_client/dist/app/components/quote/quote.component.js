@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Angular 2 objects
 var core_1 = require('@angular/core');
-var detox_model_1 = require('../../models/detox.model');
 // Services
 // This Service handles all Quote HTTP calls to our rails server
 var quote_service_1 = require('../../services/quote.service');
@@ -19,25 +18,18 @@ var QuoteComponent = (function () {
         this.quote_service = quote_service;
     }
     QuoteComponent.prototype.ngOnInit = function () {
-        this.detox = new detox_model_1.Detox();
-        this.today = new Date();
-        this.detox.drug_name = "Alcohol";
-        this.detox.last_time = new Date(2016, 0, 17);
-        this.detox.tox_free = Math.floor(((this.today - this.detox.last_time) / (864 * Math.pow(10, 5))));
         this.get_quotes();
     };
     QuoteComponent.prototype.get_quotes = function () {
         var _this = this;
         var quote = this.quote_service.get_quotes();
-        return quote.then(function (quotes) {
-            _this.quote = quotes[Math.floor(Math.random() * quotes.length)].quote;
-        });
+        return quote.then(function (quotes) { return _this.quote = quotes[Math.floor(Math.random() * quotes.length)].quote; });
     };
     QuoteComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'quote-component',
-            templateUrl: 'quote.component.html',
+            template: "\n      <p>Quote of the day:</p>\n      <p>{{quote}}</p>\n      <button class=\"quote-btn\" (click)=\"get_quotes()\">Get Quote</button>\n  ",
             styleUrls: ['quote.component.css'],
             providers: [quote_service_1.QuoteService]
         }), 

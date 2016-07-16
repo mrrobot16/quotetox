@@ -10,26 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Angular 2 objects
 var core_1 = require('@angular/core');
-var detox_component_1 = require('../detox/detox.component');
-var quote_component_1 = require('../quote/quote.component');
+// Models
+var detox_model_1 = require('../../models/detox.model');
 // Services
-// This Service handles all Quote HTTP calls to our server
-var HomeScreenComponent = (function () {
-    function HomeScreenComponent() {
+var DetoxComponent = (function () {
+    function DetoxComponent() {
     }
-    HomeScreenComponent.prototype.ngOnInit = function () {
+    DetoxComponent.prototype.ngOnInit = function () {
+        this.detox = new detox_model_1.Detox();
+        this.today = new Date();
+        this.detox.drug_name = "Alcohol";
+        this.detox.last_time = new Date(2016, 0, 17);
+        this.detox.tox_free = Math.floor(((this.today - this.detox.last_time) / (864 * Math.pow(10, 5))));
     };
-    HomeScreenComponent = __decorate([
+    DetoxComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'home-screen-component',
-            template: "\n  <div class=\"container\">\n    <detox-component></detox-component>\n    <quote-component></quote-component>\n  </div>\n  ",
-            styleUrls: ['home-screen.css'],
-            providers: [],
-            directives: [quote_component_1.QuoteComponent, detox_component_1.DetoxComponent]
+            selector: 'detox-component',
+            template: "\n    <p>Days Alcohol Free: {{detox.tox_free}}</p>\n  ",
+            styleUrls: ['detox.css'],
+            providers: []
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeScreenComponent);
-    return HomeScreenComponent;
+    ], DetoxComponent);
+    return DetoxComponent;
 }());
-exports.HomeScreenComponent = HomeScreenComponent;
+exports.DetoxComponent = DetoxComponent;
