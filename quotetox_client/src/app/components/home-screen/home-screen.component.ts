@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {DetoxComponent} from '../detox/detox.component';
 import {QuoteComponent} from '../quote/quote.component';
 // Services
+import {DetoxService} from '../../services/detox.service';
 // This Service handles all Quote HTTP calls to our server
 
 
@@ -11,6 +12,8 @@ import {QuoteComponent} from '../quote/quote.component';
   selector: 'home-screen-component',
   template: `
   <div class="container">
+    <a href="/">Detox Info</a>
+    <a href="/">Add Quote</a>
     <div class="home-screen">
     <detox-component></detox-component>
     <quote-component></quote-component>
@@ -18,7 +21,7 @@ import {QuoteComponent} from '../quote/quote.component';
   </div>
   `,
   styleUrls: ['home-screen.css'],
-  providers:[],
+  providers:[DetoxService],
   directives:[QuoteComponent, DetoxComponent]
 })
 export class HomeScreenComponent implements OnInit {

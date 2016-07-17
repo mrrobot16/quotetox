@@ -16,7 +16,7 @@ var DetoxService = (function () {
         this.http = http;
     }
     DetoxService.prototype.get_detox = function () {
-        return;
+        return this.get();
     };
     DetoxService.prototype.post_detox = function () {
     };
@@ -25,6 +25,12 @@ var DetoxService = (function () {
     DetoxService.prototype.delete_detox = function () {
     };
     DetoxService.prototype.get = function () {
+        this.detoxes = this.http.get('detoxes')
+            .toPromise()
+            .then(function (res) {
+            return res.json();
+        });
+        return this.detoxes;
     };
     DetoxService.prototype.post = function () {
     };

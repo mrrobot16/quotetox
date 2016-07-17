@@ -7,12 +7,13 @@ import {Detox} from '../models/detox.model'
 @Injectable()
 
 export class DetoxService {
+    detoxes:any
     constructor(private http: Http) {
 
     }
 
     get_detox():Promise<any>{
-    return;
+      return this.get();
     }
 
     post_detox(){
@@ -27,8 +28,13 @@ export class DetoxService {
 
     }
 
-    private get(){
-
+    private get():Promise<any>{
+      this.detoxes = this.http.get('detoxes')
+          .toPromise()
+          .then((res)=>{
+            return res.json();
+          });
+      return this.detoxes;
     }
 
     private post(){

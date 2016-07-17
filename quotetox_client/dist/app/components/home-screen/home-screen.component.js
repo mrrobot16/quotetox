@@ -13,6 +13,7 @@ var core_1 = require('@angular/core');
 var detox_component_1 = require('../detox/detox.component');
 var quote_component_1 = require('../quote/quote.component');
 // Services
+var detox_service_1 = require('../../services/detox.service');
 // This Service handles all Quote HTTP calls to our server
 var HomeScreenComponent = (function () {
     function HomeScreenComponent() {
@@ -23,9 +24,9 @@ var HomeScreenComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'home-screen-component',
-            template: "\n  <div class=\"container\">\n    <div class=\"home-screen\">\n    <detox-component></detox-component>\n    <quote-component></quote-component>\n    </div>\n  </div>\n  ",
+            template: "\n  <div class=\"container\">\n    <a href=\"/\">Detox Info</a>\n    <a href=\"/\">Add Quote</a>\n    <div class=\"home-screen\">\n    <detox-component></detox-component>\n    <quote-component></quote-component>\n    </div>\n  </div>\n  ",
             styleUrls: ['home-screen.css'],
-            providers: [],
+            providers: [detox_service_1.DetoxService],
             directives: [quote_component_1.QuoteComponent, detox_component_1.DetoxComponent]
         }), 
         __metadata('design:paramtypes', [])
