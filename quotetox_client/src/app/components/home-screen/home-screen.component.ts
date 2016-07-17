@@ -11,9 +11,11 @@ import {DetoxService} from '../../services/detox.service';
   moduleId: module.id,
   selector: 'home-screen-component',
   template: `
+  <div class="nav-bar">
+<!--  <a href="/">Detox Info</a>
+  <a href="/">Add Quote</a> -->
+  </div>
   <div class="container">
-    <a href="/">Detox Info</a>
-    <a href="/">Add Quote</a>
     <div class="home-screen">
     <detox-component></detox-component>
     <quote-component></quote-component>
