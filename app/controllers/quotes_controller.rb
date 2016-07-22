@@ -3,6 +3,7 @@ class QuotesController < ApplicationController
 
   # GET /quotes
   def index
+    p 'index method inside QuotesController'
     @quotes = Quote.all
 
     render json: @quotes
